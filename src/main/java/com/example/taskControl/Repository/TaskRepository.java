@@ -7,5 +7,5 @@ import com.example.taskControl.Model.Task;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    public boolean existByTask(Task task);
+
 }

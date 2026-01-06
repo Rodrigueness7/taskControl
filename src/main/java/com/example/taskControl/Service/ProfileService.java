@@ -26,7 +26,7 @@ public class ProfileService {
     }
 
     public Profile createProfile(Profile profile) {
-        if(profileRepository.existByProfile(profile)) {
+        if(profileRepository.existsByProfile(profile.getProfile())) {
             throw new IllegalArgumentException("Profile already exists");
         } 
         return profileRepository.save(profile);

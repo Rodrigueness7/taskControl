@@ -32,7 +32,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void updateUser(Long id, User updateUser) {
+    public User updateUser(Long id, User updateUser) {
         Optional<User> existingUserOpt = userRepository.findById(id);
         if(!existingUserOpt.isPresent()) {
             throw new IllegalArgumentException("User not found");
@@ -44,7 +44,7 @@ public class UserService {
         existingUser.setPassword(updateUser.getPassword());
         existingUser.setProfile(updateUser.getProfile());
         existingUser.setCreatedAt(updateUser.getCreatedAt());
-        userRepository.save(existingUser);
+        return userRepository.save(existingUser);
     }
     
     

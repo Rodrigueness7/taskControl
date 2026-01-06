@@ -6,13 +6,10 @@ import org.springframework.stereotype.Repository;
 import com.example.taskControl.Model.Profile;
 
 
-
 @Repository
 public interface ProfileRepository extends JpaRepository<Profile, Long> {
 
-    public boolean existByProfile(Profile profile);
+     boolean existsByProfile(String profile);
 
-    public boolean existsById(Long id);
-    
-    
+     
 }
