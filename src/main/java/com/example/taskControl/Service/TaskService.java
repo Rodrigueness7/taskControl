@@ -3,9 +3,12 @@ package com.example.taskControl.Service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.example.taskControl.Model.Task;
 import com.example.taskControl.Repository.TaskRepository;
 
+@Service
 public class TaskService {
     
     private final TaskRepository taskRepository;
