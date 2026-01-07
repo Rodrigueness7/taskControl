@@ -32,16 +32,16 @@ public class ProfileService {
         return profileRepository.save(profile);
     }
 
-    public void updateProfile(Long id, Profile updateProfile) throws IllegalAccessException {
+    public Profile updateProfile(Long id, Profile updateProfile) {
         Optional<Profile> existingProfileOpt = profileRepository.findById(id);
         if(!existingProfileOpt.isPresent()) {
-            throw new IllegalAccessException("Profile not found");
+            throw new IllegalArgumentException("Profile not found");
         } 
 
         Profile existingProfile = existingProfileOpt.get();
         existingProfile.setProfile(updateProfile.getProfile());
         existingProfile.setCreatedAt(updateProfile.getCreatedAt());
-        profileRepository.save(existingProfile);
+        return profileRepository.save(existingProfile);
     }
 
     public void deleteProfile(Long id) {

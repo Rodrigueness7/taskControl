@@ -26,7 +26,7 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    public void updateTask(Long id, Task updateTask) {
+    public Task updateTask(Long id, Task updateTask) {
         Optional<Task> existingTask = taskRepository.findById(id);
         if(!existingTask.isPresent()) {
             throw new RuntimeException("Task not found");
@@ -38,7 +38,7 @@ public class TaskService {
         task.setStatus(updateTask.getStatus());
         task.setUser(updateTask.getUser());
         task.setCreatedAt(updateTask.getCreatedAt());
-        taskRepository.save(task);
+        return taskRepository.save(task);
 
     }
 
