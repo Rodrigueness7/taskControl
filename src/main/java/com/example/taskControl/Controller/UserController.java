@@ -56,7 +56,7 @@ public class UserController {
         
        Optional<User> userExist = userService.getUserById(id);
 
-       if (userExist == null) {
+       if (userExist.isEmpty()) {
          return ResponseEntity.notFound().build();
        }
 

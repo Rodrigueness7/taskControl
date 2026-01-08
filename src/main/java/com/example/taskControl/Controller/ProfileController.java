@@ -54,7 +54,8 @@ public class ProfileController {
     public ResponseEntity<Profile> updateProfile(@PathVariable Long id, @RequestBody Profile profile) {
         
         Optional<Profile> existProfile = profileService.getProfileById(id);
-        if(existProfile == null) {
+
+        if(existProfile.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 

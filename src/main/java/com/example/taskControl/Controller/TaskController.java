@@ -52,7 +52,7 @@ public class TaskController {
     @PutMapping("/updateTask/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable Long id, Task task) {
         Optional<Task> findTask = taskService.getTask(id);
-        if(findTask == null) {
+        if(findTask.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
