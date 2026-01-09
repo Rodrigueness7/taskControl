@@ -16,9 +16,17 @@ public class Profile {
     private String profile;
     private String createdAt;
 
-    public Profile(String profile, String createdAt) {
+
+    public Profile(String profile, String createdAt, Long id) {
+        this.id = id;
         this.profile = profile;
         this.createdAt = createdAt;
+    }
+
+    public Profile() {}
+
+    public Long getId() {
+        return id;
     }
 
     public String getProfile() {

@@ -40,7 +40,6 @@ public class ProfileService {
 
         Profile existingProfile = existingProfileOpt.get();
         existingProfile.setProfile(updateProfile.getProfile());
-        existingProfile.setCreatedAt(updateProfile.getCreatedAt());
         return profileRepository.save(existingProfile);
     }
 

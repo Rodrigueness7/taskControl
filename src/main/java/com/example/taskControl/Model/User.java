@@ -24,12 +24,20 @@ public class User {
     private Profile profile;
     private String createdAt;
 
-    public User(String username, String email, String password, Profile profile, String createdAt) {
+    public User(String username, String email, String password, Profile profile, String createdAt, Long id) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.profile = profile;
         this.createdAt = createdAt;
+    }
+
+    public User() {}
+
+
+    public Long getId(){
+        return id;
     }
 
     public String getUsername() {

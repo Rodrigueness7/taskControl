@@ -24,12 +24,19 @@ public class Task {
     private User user;
     private String createdAt;
 
-    public Task(String title, String description, String status, User user, String createdAt) {
+    public Task(String title, String description, String status, User user, String createdAt, Long id) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
         this.user = user;
         this.createdAt = createdAt;
+    }
+
+    public Task() {}
+
+    public Long getId() {
+        return id;
     }
 
     public String getTitle() {
